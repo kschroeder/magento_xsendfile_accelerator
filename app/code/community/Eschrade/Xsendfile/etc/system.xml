@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<sections>
+		<system>
+			<groups>
+				<sendfile translate="label comment" module="eschrade_xsendfile">
+					<label>Sendfile Support</label>
+					<show_in_default>1</show_in_default>
+					<fields>
+						<enabled translate="label">
+							<label>Enabled</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</enabled>
+						<webserver translate="label">
+							<label>Web Server</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>eschrade_xsendfile/system_config_source_webserver</source_model>
+                            <sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</webserver>
+						<bypass_mime translate="label">
+							<label>Bypass MIME Detection</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>The default mechanism in Magento is to use MIME detection by loading the file and parsing it.  This may have performance implications.  Setting this value to Yes will return the MIME type using the filename extension only.  This will only work for file-based downloads.</comment>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</bypass_mime>
+						<alias_path translate="label">
+							<label>Alias Path</label>
+							<frontend_type>text</frontend_type>
+                            <comment>Nginx requires an alias path to be prepended to any accelerated requests.  Enter that alias here.</comment>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<depends><webserver>nginx</webserver></depends>
+						</alias_path>
+					</fields>
+				</sendfile>
+			</groups>
+		</system>
+	</sections>
+</config>

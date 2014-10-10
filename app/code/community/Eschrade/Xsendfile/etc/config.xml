@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<global>
+		<helpers>
+			<eschrade_xsendfile>
+				<class>Eschrade_Xsendfile_Helper</class>
+			</eschrade_xsendfile>
+			<downloadable>
+					<rewrite>
+						<download>Eschrade_Xsendfile_Helper_Download</download>
+					</rewrite>
+			</downloadable>
+		</helpers>
+		<models>
+			<eschrade_xsendfile>
+				<class>Eschrade_Xsendfile_Model</class>
+			</eschrade_xsendfile>
+		</models>
+	</global>
+</config>
